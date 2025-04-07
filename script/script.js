@@ -1,6 +1,4 @@
-alert("어서오세요 ! Xenooh의 블로그에 오신 것을 환영합니다 !");
-
 function sayHello() {
-    alert("안녕하세요 ! Xenooh입니다 !");
+    alert("자바스크립트 버튼 구현 연습입니다 점점 늘어날 생각임  !");
 
 }
