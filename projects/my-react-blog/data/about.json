@@ -1,0 +1,54 @@
+{
+    "descript": " 웹 개발 실력으로 멋진 온라인 경험을 만들어나가는 데 열정적인 개발자입니다. 혹시 웹 개발과 관련해서 궁금한 점이 있으신가요?",
+    "aboutTitle": "Java(Spring, Spring boot), React, AWS 개발자",
+    "aboutContent": "저는 사용자에게 편리하고 즐거운 웹 경험을 제공하기 위해 코드를 짜고 디자인하는 웹 개발자입니다. 현재 대한민국 경기도 고양시에서 살면서, 끊임없이 새로운 기술을 배우고 적용하며 더 나은 웹 서비스를 만들기 위해 노력하고 있습니다. 웹 개발에 대해 궁금한 점이나 함께 이야기 나누고 싶은 주제가 있으시면 언제든지 편하게 말씀해주세요!",
+    "name": "xeno",
+    "phone": "+82 10 1234 1234",
+    "age": "99 Years",
+    "email": "email@email.com",
+    "Occupation": "백수",
+    "Nationality": "대한민국",
+    "img": "img/me.jpg",
+    "skills": [
+        {
+            "title": "HTML,CSS",
+            "scripts": "html, CSS  이해도를 가지고 있습니다.",
+            "level": "50"
+        },
+        {
+            "title": "JavaScript",
+            "scripts": "JavaScript의 이해도를 가지고 있습니다.",
+            "level": "10"
+        },
+        {
+            "title": "Java servlet",
+            "scripts": "Java servlet 이해도를 가지고 있습니다.",
+            "level": "30"
+        },
+        {
+            "title": "Spring",
+            "scripts": "Spring이야 완벽하게 합니다.",
+            "level": "10"
+        },
+        {
+            "title": "Spring boot",
+            "scripts": "Spring boot야 완벽하게 합니다.",
+            "level": "10"
+        },
+        {
+            "title": "React",
+            "scripts": "React야 완벽하게 합니다.",
+            "level": "10"
+        },
+        {
+            "title": "Mobile",
+            "scripts": "Mobile이야 완벽하게 합니다.",
+            "level": "1"
+        },
+        {
+            "title": "AWS",
+            "scripts": "AWS야 완벽하게 합니다.",
+            "level": "1"
+        }
+    ]
+}
