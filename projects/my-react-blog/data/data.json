@@ -1,0 +1,50 @@
+{
+    "navItems" : [
+       { 
+        "title" : "소개",
+        "link" : "about"
+    }, 
+       {"title":"포트폴리오",
+        "link" : "portfolio"
+        },
+       {
+        "title" :"연락주세요",
+        "link" : "contact"
+    },
+       {
+        "title" : "다시합니다.",
+        "link" : "resume"
+    }
+        ],
+        "socialLinks" : {
+            "kakao" : "#",
+            "instagram" : "#",
+            "twitter" : "#",    
+            "facebook" : "#"
+        },
+
+        "hero" : {
+            "title" : "AI 보다 노력하는 개발자 xeno의 블로그입니다.",
+            "subtitle" : "무료료 제공되는 Google의 서비스는 영여와 100가지 이상의 다른언어로 번역됩니다.",
+            "cta1" : "View My Work",
+            "cta2" : "Let's Contact",
+            "image" : { "img" : "img/hero.png",
+                        "alt" : "web developer xenooh"
+            },
+            "state" : [
+                {
+                    "number" : "1+", 
+                    "label" : "Years of Experience"
+                },
+                {
+                    "number" : "0+",
+                     "label" : "Projects Completed"
+                },
+                {
+                    "number" : "0+",
+                     "label" : "Happy Clients"
+                }
+
+            ]
+        }
+}
