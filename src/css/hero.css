@@ -1,0 +1,153 @@
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .content h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 991px) {
+    .hero .content h2 {
+        font-size: 2.5rem;
+    }
+}
+
+.hero .content .lead {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.hero .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 576px) {
+    .hero .cta-buttons {
+        flex-direction: column;
+    }
+}
+
+.hero .cta-buttons .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.hero .cta-buttons .btn.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--contrast-color);
+}
+
+.hero .cta-buttons .btn.btn-primary:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+    border-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+    transform: translateY(-2px);
+}
+
+.hero .cta-buttons .btn.btn-outline {
+    border: 2px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+    color: var(--accent-color);
+    background: transparent;
+}
+
+.hero .cta-buttons .btn.btn-outline:hover {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    transform: translateY(-2px);
+}
+
+.hero .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 576px) {
+    .hero .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+.hero .hero-stats .stat-item .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    line-height: 1;
+}
+
+.hero .hero-stats .stat-item .stat-label {
+    font-size: 0.9rem;
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.hero .hero-image {
+    position: relative;
+    padding: 2rem;
+}
+
+.hero .hero-image img {
+    position: relative;
+    z-index: 2;
+}
+
+.hero .hero-image .shape-1,
+.hero .hero-image .shape-2 {
+    position: absolute;
+    border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+    z-index: 1;
+}
+
+.hero .hero-image .shape-1 {
+    width: 300px;
+    height: 300px;
+    background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+    top: -20px;
+    right: -20px;
+    animation: morphShape 15s linear infinite;
+}
+
+.hero .hero-image .shape-2 {
+    width: 200px;
+    height: 200px;
+    background-color: color-mix(in srgb, var(--heading-color), transparent 90%);
+    bottom: -20px;
+    left: -20px;
+    animation: morphShape 20s linear infinite reverse;
+}
+
+@media (max-width: 991px) {
+    .hero {
+        text-align: center;
+        padding: 60px 0;
+    }
+
+    .hero .cta-buttons {
+        justify-content: center;
+    }
+
+    .hero .hero-stats {
+        justify-content: center;
+    }
+
+    .hero .hero-image {
+        margin-top: 3rem;
+    }
+}
