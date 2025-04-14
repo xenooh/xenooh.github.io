@@ -1,0 +1,133 @@
+@import url('main.css');
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about .about-image {
+    position: relative;
+}
+
+.about .about-image img {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.about .about-content {
+    padding-left: 2rem;
+}
+
+.section-title p {
+    width: 64%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 991.98px) {
+    .about .about-content {
+        padding-left: 0;
+        margin-top: 3rem;
+    }
+}
+
+.about .about-content .subtitle {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.about .about-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.about .about-content .lead {
+    font-size: 1.1rem;
+    color: color-mix(in srgb, var(--default-color), transparent 25%);
+}
+
+.about .personal-info {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: var(--surface-color);
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.about .personal-info .info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.about .personal-info .info-item .label {
+    font-size: 0.875rem;
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.about .personal-info .info-item .value {
+    font-weight: 600;
+    color: var(--heading-color);
+}
+
+.about .signature {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.about .signature .signature-image {
+    max-width: 150px;
+}
+
+.about .signature .signature-info h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.about .signature .signature-info p {
+    font-size: 0.875rem;
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
+    margin: 0;
+}
+
+/*--------------------------------------------------------------
+  # Skills Section
+  --------------------------------------------------------------*/
+.skills .skill-box {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.skills .skill-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.skills .skill-box p {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.6;
+}
+
+.skills .skill-box .progress {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+    border-radius: 50px;
+    height: 8px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.skills .skill-box .progress .progress-bar {
+    background-color: var(--accent-color);
+    height: 100%;
+    position: relative;
+    border-radius: 50px;
+    transition: 0.9s;
+    width: 1px;
+}
