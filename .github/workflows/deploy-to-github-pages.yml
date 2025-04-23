@@ -30,7 +30,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v3 # v3 버전 사용
+        uses: JamesIves/github-pages-deploy-action@v4 # v3 버전 사용
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
