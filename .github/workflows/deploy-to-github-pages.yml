@@ -29,6 +29,10 @@ jobs:
           REACT_APP_GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
         run: npm run build
 
+      - name: Move build files to root
+        run: mv build/* . && rm -rf build
+        if: success()  
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
