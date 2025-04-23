@@ -64,6 +64,7 @@ jobs:
         uses: actions/deploy-pages@v4
 
 
+##
 5. GitHub 설정 ⚙️
 Settings > Pages 탭에서 Source를 GitHub Actions로 설정하고 저장!
 
@@ -84,4 +85,3 @@ HackerNoon
 Eunchurn Blog
 
 AWS CDK
-
