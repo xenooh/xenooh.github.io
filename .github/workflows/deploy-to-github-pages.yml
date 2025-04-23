@@ -4,6 +4,11 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write
+  pages: write    # 필요한 경우 추가
+  id-token: write # 필요한 경우 추가
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -21,7 +26,7 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install react@18.3.1 react-dom@18.3.1 react-kakao-maps-sdk@1.1.27 
+        run: npm install react@18.3.1 react-dom@18.3.1 react-kakao-maps-sdk@1.1.27
       - name: Build React app
         env:
           REACT_APP_GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
