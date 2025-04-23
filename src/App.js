@@ -22,7 +22,7 @@ const App = () => {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <Router>
+    <Router basename="">
       <Header navItems={data.navItems} socialLinks={data.socialLinks} />
       <Routes>
         <Route path="/" element={<Home hero={data.hero} />} />
