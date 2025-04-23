@@ -20,7 +20,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 전체 기록 가져오기
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -28,7 +28,7 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install react@18.3.1 react-dom@18.3.1 react-kakao-maps-sdk@1.1.27
+        run: npm install
 
       - name: Build React app
         env:
@@ -36,7 +36,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4
+        uses: JamesIves/github-pages-deploy-action@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
