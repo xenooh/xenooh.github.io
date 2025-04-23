@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+🚀 React 포트폴리오 - GitHub Pages 자동 배포
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이 프로젝트는 React로 만든 프론트엔드 포트폴리오 사이트를 GitHub Pages에 자동으로 배포하는 설정을 포함하고 있습니다.
 
-## Available Scripts
+🌐 배포 주소
 
-In the project directory, you can run:
+👉 https://your-username.github.io/your-repo-name
 
-### `npm start`
+📦 사용 기술
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React (CRA 기반)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+GitHub Actions (자동 배포)
 
-### `npm test`
+GitHub Pages (정적 웹사이트 호스팅)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+⚙️ 설치 및 실행 방법
 
-### `npm run build`
+npm install     # 의존성 설치
+npm start       # 로컬 개발 서버 실행
+npm run build   # 빌드
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🚢 GitHub Pages 자동 배포 설정
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. package.json 설정
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+"homepage": "https://your-username.github.io/your-repo-name"
 
-### `npm run eject`
+2. GitHub Actions 워크플로우
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+.github/workflows/deploy.yml 파일을 생성하고 아래 내용을 추가합니다:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+name: Deploy React App to GitHub Pages
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+on:
+  push:
+    branches: [ main ]
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-## Learn More
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-### Code Splitting
+      - name: Install dependencies
+        run: npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+      - name: Build app
+        run: npm run build
 
-### Analyzing the Bundle Size
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
 
-### Making a Progressive Web App
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. GitHub Repository 설정
 
-### Advanced Configuration
+Settings > Pages > Build and Deployment > GitHub Actions 선택
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+✅ 기타 팁
 
-### Deployment
+.nojekyll 파일은 자동 생성됨 (CRA에서는 걱정 X)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+build 폴더는 .gitignore에 있어도 문제 없음 (GitHub Actions에서 빌드하므로)
 
-### `npm run build` fails to minify
+🧑‍💻 만든 사람
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+당신의 GitHub 이름
+
+💡 포트폴리오, 소개 페이지, 기술 블로그 등을 만들 때 이 구조를 기반으로 자유롭게 확장할 수 있습니다!
+
