@@ -11,8 +11,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Navigate to React app directory # 추가된 단계
-        run: cd xenooh.github.io # 실제 React 앱 폴더 이름으로 변경하세요. 만약 루트에 있다면 이 단계는 필요 없을 수 있습니다.
+      # React 프로젝트가 루트 디렉토리에 있다면 이 단계를 제거하세요.
+      # React 프로젝트가 'xenooh.github.io' 폴더 안에 있다면 아래 줄을 사용하세요.
+      - name: Navigate to React app directory
+        run: cd xenooh.github.io
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
