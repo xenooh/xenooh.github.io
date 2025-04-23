@@ -5,9 +5,15 @@ on:
     branches: [ main ]
 
 permissions:
+<<<<<<< HEAD
   contents: write
   pages: write    # 필요한 경우 추가
   id-token: write # 필요한 경우 추가
+=======
+  contents: write # GITHUB_TOKEN에 쓰기 권한 부여
+  pages: write    # 필요한 경우 pages 권한도 추가
+  id-token: write # 필요한 경우 id-token 권한도 추가
+>>>>>>> b1a795205297fda101d797760c43e1a86288ef5b
 
 jobs:
   build-and-deploy:
@@ -16,10 +22,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # React 프로젝트가 루트 디렉토리에 있으므로 이 단계는 제거합니다.
-      # - name: Navigate to React app directory
-      #   run: cd xenooh.github.io
-
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -27,6 +29,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install react@18.3.1 react-dom@18.3.1 react-kakao-maps-sdk@1.1.27
+<<<<<<< HEAD
+=======
+
+>>>>>>> b1a795205297fda101d797760c43e1a86288ef5b
       - name: Build React app
         env:
           REACT_APP_GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
