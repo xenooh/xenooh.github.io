@@ -64,22 +64,21 @@ jobs:
         uses: actions/deploy-pages@v4
 
 
-##
-5. GitHub 설정 ⚙️
+## 5. GitHub 설정 ⚙️
 Settings > Pages 탭에서 Source를 GitHub Actions로 설정하고 저장!
 
-6. API 키 관리 🔑 (선택 사항)
+## 6. API 키 관리 🔑 (선택 사항)
 민감한 API 키는 Secrets로 등록하여 안전하게 관리할 수 있습니다.
 env:
   REACT_APP_API_KEY: ${{ secrets.YOUR_API_KEY }}
 
 
-7. 문제 해결 팁 ⚡
+## 7. 문제 해결 팁 ⚡
 .nojekyll 파일을 추가하여 Jekyll 문제를 방지!
 
 GitHub Actions 로그에서 에러를 확인하고, 콘솔을 체크하여 문제를 파악하세요!
 
-출처 📚
+## 출처 📚
 HackerNoon
 
 Eunchurn Blog
