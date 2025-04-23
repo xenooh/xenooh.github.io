@@ -21,8 +21,7 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install react-kakao-maps-sdk@최신_호환_버전 # 특정 버전 설치 시
-
+        run: npm install react@18.3.1 react-dom@18.3.1 react-kakao-maps-sdk@1.1.27 
       - name: Build React app
         env:
           REACT_APP_GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
