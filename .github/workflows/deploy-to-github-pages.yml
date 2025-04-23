@@ -33,6 +33,9 @@ jobs:
           REACT_APP_GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
         run: npm run build
 
+      - name: Copy public folder to root
+        run: cp -r public/* .
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
