@@ -22,7 +22,7 @@ jobs:
 
       - name: Build React app # 빌드 단계 추가 (환경 변수 주입)
         env:
-          REACT_APP_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub Secrets에서 토큰 가져와 환경 변수 설정
+          REACT_APP_GITHUB_TOKEN: ${{ secrets.API_TOKEN }} # GitHub Secrets에서 토큰 가져와 환경 변수 설정
         run: npm run build
 
       - name: Deploy to GitHub Pages # 배포 단계 추가
