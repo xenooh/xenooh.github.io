@@ -31,6 +31,10 @@ jobs:
       - name: Build React app
         env:
           REACT_APP_GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
+          REACT_APP_KAKAO_KEY: ${{ secrets.REACT_APP_KAKAO_KEY }} # 카카오 API 키
+          REACT_APP_PUBLIC_KEY: ${{ secrets.REACT_APP_PUBLIC_KEY }} # (이메일 관련 키로 추정)
+          REACT_APP_SERVICE_ID: ${{ secrets.REACT_APP_SERVICE_ID }} # (이메일 관련 ID로 추정)
+          REACT_APP_TEMPLATE_ID: ${{ secrets.REACT_APP_TEMPLATE_ID }} # (이메일 관련 템플릿 ID로 추정)
           # 사용자 페이지 (username.github.io)는 루트에서 서빙되므로,
           # package.json의 homepage를 설정하지 않거나 "." 또는 "/" 로 설정하는 것이 일반적입니다.
           # Create React App 기준: package.json 에 "homepage": "." 추가 또는 제거 후 빌드
