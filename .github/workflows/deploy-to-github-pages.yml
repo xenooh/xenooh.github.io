@@ -5,9 +5,9 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write # GITHUB_TOKEN에 쓰기 권한 부여
-  pages: write    # 필요한 경우 pages 권한도 추가
-  id-token: write # 필요한 경우 id-token 권한도 추가
+  contents: write
+  pages: write    # 필요한 경우 추가
+  id-token: write # 필요한 경우 추가
 
 jobs:
   build-and-deploy:
@@ -30,7 +30,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v3 # v3 버전 사용
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
