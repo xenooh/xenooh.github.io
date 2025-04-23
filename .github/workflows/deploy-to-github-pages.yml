@@ -34,5 +34,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: main  # 배포할 브랜치
-          folder: build # 빌드된 파일이 있는 폴더
+          folder: . # 빌드된 파일이 있는 폴더
           clean: true # 추가된 옵션
