@@ -32,7 +32,7 @@ const About = () => {
                     <div className="row align-items-center">
                         <div className="col-lg-6 position-relative" data-aos="fade-right" data-aos-delay="200">
                             <div className="about-image">
-                                <img src={adata.img} alt="Profile Image" className="img-fluid rounded-4" />
+                                <img src={adata.img} alt="나의 프로필" className="img-fluid rounded-4" />
                             </div>
                         </div>
 

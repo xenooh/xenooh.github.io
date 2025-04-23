@@ -12,10 +12,10 @@ const Footer = ({ socialLinks }) => {
                     </p>
                 </div>
                 <div className="social-links d-flex justify-content-center">
-                    <a href={socialLinks.kakao} target="_blank"><RiKakaoTalkFill /></a>
-                    <a href={socialLinks.twitter} target="_blank"><RiTwitterXLine /></a>
-                    <a href={socialLinks.instagram} target="_blank"><RiInstagramFill /></a>
-                    <a href={socialLinks.facebook} target="_blank"><RiFacebookBoxFill /></a>
+                    <a href={socialLinks.kakao} target="_blank" rel="noopener noreferrer" ><RiKakaoTalkFill /></a>
+                    <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" ><RiTwitterXLine /></a>
+                    <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" ><RiInstagramFill /></a>
+                    <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" ><RiFacebookBoxFill /></a>
                 </div>
             </div>
 

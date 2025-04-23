@@ -145,11 +145,11 @@ const Contact = () => {
                                             {isError && <div className="text-danger">알수없는 이유로 이메일이 전송되지 않았습니다.</div>}
                                             {status && <div className="text-success">{status}</div>}
 
-                                            <button type="button"
+                                            <Button type="button"
                                                 className="btn btn-submit w-100"
                                                 onClick={sendEmail}>
                                                 Submit Message
-                                            </button>
+                                            </Button>
                                         </div>
 
                                     </div>

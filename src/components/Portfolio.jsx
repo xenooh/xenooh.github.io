@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Row, Col, Button, Card, ButtonGroup, Spinner } from 'react-bootstrap'
+import { Container, Row, Col, Button, Card, ButtonGroup} from 'react-bootstrap'
 import { FaGithub } from 'react-icons/fa';
 import axios from 'axios';
 
@@ -58,7 +58,7 @@ const Portfolio = () => {
                     <h2 className="text-center">Portfolio</h2>
                     <p className="text-muted">GitHub에서 자동으로 가져온 제 프로젝트입니다.</p>
                     <p>
-                        <a href="https://github.com/xenooh" target="_blank">
+                        <a href="https://github.com/xenooh" target="_blank" rel="noopener noreferrer" >
                             <FaGithub /> 깃허브 바로가기</a></p>
                 </div>
 
