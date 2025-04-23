@@ -1,55 +1,43 @@
-🚀 React 포트폴리오 - GitHub Pages 자동 배포
+# GitHub Pages로 React 앱 자동 배포 🚀
 
-이 프로젝트는 React로 만든 프론트엔드 포트폴리오 사이트를 GitHub Pages에 자동으로 배포하는 설정을 포함하고 있습니다.
+이 문서는 **React 앱을 GitHub Pages**에 **자동 배포**하는 방법을 안내합니다. 푸시만 하면 자동으로 배포되는 멋진 시스템을 만들어 봅시다!
 
-🌐 배포 주소
+## 1. 목표 🎯
+로컬에서 직접 빌드하지 않고, GitHub 레포지토리에 코드 푸시만으로 React 앱을 자동으로 배포합니다.
+- **사용자 페이지**: `https://<username>.github.io`
+- **프로젝트 페이지**: `https://<username>.github.io/<repository_name>`
 
-👉 https://your-username.github.io/your-repo-name
+## 2. React 앱 빌드 ⚙️
+React 앱은 브라우저에서 실행 가능한 **정적 파일**(HTML, CSS, JS)로 변환해야 합니다.
+- `npm run build` 또는 `yarn build` 명령어를 사용하여 `build` 폴더에 결과물이 생성됩니다.
 
-📦 사용 기술
+## 3. GitHub Pages 설정 📚
+- **레포지토리 이름**:
+  - 사용자 페이지: `<username>.github.io`
+  - 프로젝트 페이지: 자유롭게 설정
+- **소스 브랜치**: `main` 브랜치의 루트 또는 `/docs` 폴더, 또는 `gh-pages` 브랜치의 루트
+- **`.nojekyll` 파일**: Jekyll 처리를 비활성화합니다. 빈 `.nojekyll` 파일을 루트에 추가해주세요.
+- **package.json**: `homepage` 속성 추가
+  - 사용자 페이지: `"homepage": "https://<username>.github.io"`
+  - 프로젝트 페이지: `"homepage": "https://<username>.github.io/<repository_name>"`
 
-React (CRA 기반)
+## 4. 자동 배포 설정 🚀
+GitHub Actions를 이용해 자동 배포를 설정합니다. `.github/workflows` 폴더에 워크플로우 파일을 생성하세요.
 
-GitHub Actions (자동 배포)
+### `deploy-to-github-pages.yml`
 
-GitHub Pages (정적 웹사이트 호스팅)
-
-⚙️ 설치 및 실행 방법
-
-npm install     # 의존성 설치
-npm start       # 로컬 개발 서버 실행
-npm run build   # 빌드
-
-🚢 GitHub Pages 자동 배포 설정
-
-1. package.json 설정
-
-"homepage": "https://your-username.github.io/your-repo-name"
-
-2. GitHub Actions 워크플로우
-
-.github/workflows/deploy.yml 파일을 생성하고 아래 내용을 추가합니다:
-
+```yaml
 name: Deploy React App to GitHub Pages
 
 on:
   push:
     branches: [ main ]
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Node.js
@@ -60,13 +48,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build app
+      - name: Build React app
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
+      - name: Upload build folder
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
@@ -74,27 +59,29 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
 
-3. GitHub Repository 설정
 
-Settings > Pages > Build and Deployment > GitHub Actions 선택
+5. GitHub 설정 ⚙️
+Settings > Pages 탭에서 Source를 GitHub Actions로 설정하고 저장!
 
-✅ 기타 팁
+6. API 키 관리 🔑 (선택 사항)
+민감한 API 키는 Secrets로 등록하여 안전하게 관리할 수 있습니다.
+env:
+  REACT_APP_API_KEY: ${{ secrets.YOUR_API_KEY }}
 
-.nojekyll 파일은 자동 생성됨 (CRA에서는 걱정 X)
 
-build 폴더는 .gitignore에 있어도 문제 없음 (GitHub Actions에서 빌드하므로)
+7. 문제 해결 팁 ⚡
+.nojekyll 파일을 추가하여 Jekyll 문제를 방지!
 
-🧑‍💻 만든 사람
+GitHub Actions 로그에서 에러를 확인하고, 콘솔을 체크하여 문제를 파악하세요!
 
-당신의 GitHub 이름
+출처 📚
+HackerNoon
 
-💡 포트폴리오, 소개 페이지, 기술 블로그 등을 만들 때 이 구조를 기반으로 자유롭게 확장할 수 있습니다!
+Eunchurn Blog
+
+AWS CDK
 
