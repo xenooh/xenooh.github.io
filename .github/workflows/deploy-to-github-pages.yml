@@ -30,8 +30,10 @@ jobs:
         run: npm run build
 
       - name: Move build files to root
-        run: mv build/* . && rm -rf build
-        if: success()  
+        run: |
+          mv build/* .
+          rm -rf build
+        if: success()
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
