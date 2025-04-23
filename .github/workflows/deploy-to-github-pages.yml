@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 전체 기록 가져오기
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -33,11 +35,8 @@ jobs:
           REACT_APP_GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
         run: npm run build
 
-      - name: Copy public folder to root
-        run: cp -r public/* .
-
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
