@@ -41,5 +41,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
-          folder: docs
+          folder: .
           clean: true
