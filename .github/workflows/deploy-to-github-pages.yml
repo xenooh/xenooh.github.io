@@ -21,7 +21,7 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: npm install react-kakao-maps-sdk@최신_호환_버전 # 특정 버전 설치 시
 
       - name: Build React app
         env:
